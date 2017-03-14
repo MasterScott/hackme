@@ -1,7 +1,6 @@
 <h1 align="center">
 	<br>
-	<img width="400" src="https://nikolaskama.me/hackme/images/Multicolor/SVG/Round_Icons/Ninja.svg" alt="awesome">
-	<br>
+	<img width="200" src="https://nikolaskama.me/hackme/images/Multicolor/SVG/Round_Icons/Ninja.svg" alt="awesome">
 	<br>
 	<br>
 </h1>
