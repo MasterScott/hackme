@@ -20,15 +20,15 @@
 
 /* Themes for different contexts */
 .bs-callout-danger {
-  background-color: #fcf2f2;
-  border-color: #dFb5b4;
+  background-color: rgba(252,242,242,0.8);
+  border-color: rgba(223,181,180,0.8);
 }
 .bs-callout-warning {
-  background-color: #fefbed;
-  border-color: #f1e7bc;
+  background-color: rgba(254,251,237,0.8);
+  border-color: rgba(241,231,188,0.8);
 }
 .bs-callout-info {
-  background-color: #f0f7fd;
-  border-color: #d0e3f0;
+  background-color: rgba(240,247,253,0.8);
+  border-color: rgba(208,227,240,0.8);
 }
 
