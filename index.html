@@ -5,17 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Hack me</title>
+        <title>HackMe | {NikolasKama}</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-        <link rel="icon" type="image/png"
-         href="images/panda.png" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="images/panda.png" />
 
-        <!-- Optional theme & font -->
+        <!-- Styling Swag -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Anonymous+Pro" />
+        <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
+        <!-- Some More Styling Swag -->
+        <link rel='stylesheet' href='callout.css' />
+        <!-- Latest compiled and minified JavaScript -->
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
         <style>
             body {
                 margin: 15px;
@@ -29,6 +35,10 @@
             }
             blockquote {
                 font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+            }
+            #icon {
+                font-size: 100px;
+                color: black;
             }
             .bs-callout .media-body.vertical-center {
                 padding: 15px 0 0 15px;
@@ -56,10 +66,6 @@
             }
         </style>
 
-        <link rel='stylesheet' href='callout.css' />
-        <!-- Latest compiled and minified JavaScript -->
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
     </head>
     <body>
         <div class='container'>
@@ -88,9 +94,9 @@
                 <div class='row text-center'>
                     <div class='col-sm-6 col-md-3'>
                         <div class='thumbnail'>
-                            <img src='images/circle/64x64/google.png' alt='gmail' />
+                            <i class="far fa-envelope" id="icon"></i>
                             <div class='caption'>
-                                The e-mail with the subject <strong>Bounty secret #1</strong>
+                                The e-mail with the subject <strong>Bounty Secret #1</strong>
                                 from <a href='mailto:nikolaskama@gmail.com'>my Gmail</a>.
 
                                 <div class='highlight'>฿ 0.02</div>
@@ -101,9 +107,9 @@
                     <!-- Consider deleting fb bounty. -->
                     <div class='col-sm-6 col-md-3'>
                         <div class='thumbnail'>
-                            <img src='images/circle/64x64/fb.png' alt='facebook' />
+                            <i class="fab fa-facebook" id="icon"></i>
                             <div class='caption'>
-                                The Facebook note called <strong>Bounty secret #1</strong>
+                                The Facebook note called <strong>Bounty Secret #1</strong>
                                 from <a href='https://facebook.com/nikolaskam'>my Facebook</a>.</li>
 
                                 <div class='highlight'>฿ 0.02</div>
@@ -113,7 +119,7 @@
 
                     <div class='col-sm-6 col-md-3'>
                         <div class='thumbnail'>
-                            <img src='images/circle/64x64/twitter.png' alt='twitter' />
+                            <i class="fab fa-twitter-square" id="icon"></i>
                             <div class='caption'>
                                 The <strong>direct message</strong> from me to myself on <a href='https://twitter.com/nikolaskama'>my Twitter</a>.
 
@@ -124,7 +130,7 @@
 
                     <div class='col-sm-6 col-md-3'>
                         <div class='thumbnail'>
-                            <img src='images/circle/64x64/files.png' alt='files' />
+                            <i class="far fa-file" id="icon"></i>
                             <div class='caption'>
                                 The secret file <strong>~/.bounty</strong> from my <strong>personal MacBook</strong>.
 
